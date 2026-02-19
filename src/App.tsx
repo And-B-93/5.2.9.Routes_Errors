@@ -13,9 +13,9 @@ import { ErrorPage } from "./pages/ErrorPage";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route>
+      <Route errorElement={<ErrorPage />}>
         <Route path="/" element={<Navigate to="/vacancies/moscow" replace />} />
-        <Route path="/vacancies" errorElement={<ErrorPage />}>
+        <Route path="/vacancies">
           <Route path="moscow" element={<Vacancies />} />
           <Route path="petersburg" element={<Vacancies />} />
           <Route path=":id" element={<DescriptionVacancy />} />
