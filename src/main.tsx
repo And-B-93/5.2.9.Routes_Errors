@@ -1,5 +1,5 @@
 import { StrictMode } from "react";
-import { HashRouter } from "react-router-dom";
+
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import { MantineProvider } from "@mantine/core";
@@ -12,12 +12,10 @@ const store = setupStore();
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <HashRouter>
-      <Provider store={store}>
-        <MantineProvider>
-          <App />
-        </MantineProvider>
-      </Provider>
-    </HashRouter>
+    <Provider store={store}>
+      <MantineProvider>
+        <App />
+      </MantineProvider>
+    </Provider>
   </StrictMode>,
 );
