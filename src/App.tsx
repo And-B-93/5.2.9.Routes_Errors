@@ -22,6 +22,9 @@ function App() {
         </Route>
       </Route>,
     ),
+    {
+      basename: "/5.2.9.Routes_Errors",
+    },
   );
   return (
     <>
