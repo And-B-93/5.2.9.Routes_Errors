@@ -3,7 +3,7 @@ import type { Vacancy } from "../types/types";
 import { Link } from "react-router-dom";
 
 interface VacancyCardProps {
-  vacancy: Vacancy;
+  vacancy: Vacancy | null;
   showDescription?: boolean;
   showButtonSeeVacancy?: boolean;
 }
@@ -13,6 +13,23 @@ const VacancyCard = ({
   showDescription = false,
   showButtonSeeVacancy = true,
 }: VacancyCardProps) => {
+  if (!vacancy) {
+    return (
+      <Stack
+        style={{
+          border: "1px solid #dee2e6",
+          borderRadius: "12px",
+          backgroundColor: "white",
+          minHeight: "250px !important",
+          width: "660px",
+          padding: "24px",
+          margin: "0 auto",
+        }}
+      >
+        <Text>Данные вакансии отсутствуют</Text>
+      </Stack>
+    );
+  }
   return (
     <>
       {" "}

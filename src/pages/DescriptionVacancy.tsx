@@ -44,7 +44,7 @@ export function DescriptionVacancy() {
       </Button>
 
       <VacancyCard
-        vacancy={vacancy!}
+        vacancy={vacancy}
         showDescription={true}
         showButtonSeeVacancy={false}
       />
