@@ -1,6 +1,7 @@
 import { Badge, Button, Group, Stack, Text, Title } from "@mantine/core";
 import type { Vacancy } from "../types/types";
 import { Link } from "react-router-dom";
+import { ErrorPage } from "../pages/ErrorPage";
 
 interface VacancyCardProps {
   vacancy: Vacancy | null;
@@ -14,21 +15,7 @@ const VacancyCard = ({
   showButtonSeeVacancy = true,
 }: VacancyCardProps) => {
   if (!vacancy) {
-    return (
-      <Stack
-        style={{
-          border: "1px solid #dee2e6",
-          borderRadius: "12px",
-          backgroundColor: "white",
-          minHeight: "250px !important",
-          width: "660px",
-          padding: "24px",
-          margin: "0 auto",
-        }}
-      >
-        <Text>Данные вакансии отсутствуют</Text>
-      </Stack>
-    );
+    return <ErrorPage />;
   }
   return (
     <>
