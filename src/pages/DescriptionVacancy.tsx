@@ -1,14 +1,14 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import type { Vacancy } from "../types/types";
 import { useEffect, useState } from "react";
-import { Button, Container } from "@mantine/core";
+import { Container } from "@mantine/core";
 import ky from "ky";
 import { Spinner } from "../components/Spinner";
 import { VacancyCard } from "../components/VacancyCard";
 
 export function DescriptionVacancy() {
   const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
+
   const [vacancy, setVacancy] = useState<Vacancy | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -39,10 +39,6 @@ export function DescriptionVacancy() {
 
   return (
     <Container size="1100px" py="xl">
-      <Button variant="subtle" onClick={() => navigate(-1)} mb="lg">
-        Назад к списку вакансий
-      </Button>
-
       <VacancyCard
         vacancy={vacancy}
         showDescription={true}
